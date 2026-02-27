@@ -51,8 +51,6 @@ dir
 
 # 💻 Build your network. 
 
-![Day1](img/Day1_100.png)
-
 <br>
 <br>
 
@@ -81,42 +79,11 @@ CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
 Examples:
   | __Protocol__                 | __Supported Devices__    |
   | ---                          | ---                      |
-  | Etherchannel                 | Cisco Catalyst..and more |
-  | FlexStack (Master Switch)    | Cisco 2960 & 6500 Series |
-  | VSS (Single logical switch)  | NXOS 9k                  |
+  | Etherchannel                 |                          |
+  | FlexStack (Master Switch)    |                          |
+  | VSS (Single logical switch)  |                          |
   | SSO (Stateful Switchover)
   | NSF (Non-stop Forwarding)
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 🔌 Wired and wireless network.
-*How many devices do you have right now that can connect to the internet?*
-
-<br>
-
-> [!NOTE]
-> A network must be Flexible. Reliable. __AVAILABLE__.
-
-<br>
-
-### 📶 PLDT AP vs Wireless Controller & Autonomous AP
-
-<br>
-
-Wifi Mesh
- - Wired Backhaul
- - Wireless Backhaul
-
-<br>
-
-Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/)
-
-  - WiFi 6     IEEE 802.11ax
-  - WiFi 7     IEEE P802.11be
 
 <br>
 <br>
@@ -127,7 +94,34 @@ Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](http
 ## In-house vs MSP
 On-Prem Devices vs RSTHayup Labs (3-tier Enterprise)
 
-![3Tier](img/3Tier.png)
+
+<br> 
+<br> 
+<br> 
+<br> 
+
+
+~~~
+!@CoreBABA
+conf t
+ hostname CoreBABA-#$34T#
+ enable secret pass
+ service password-encryption
+ no ip domain lookup
+ no logging cons
+ line cons 0 
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int vlan 1
+  ip add 10.#$34T#.1.4 255.255.255.0
+  no shut
+  end
+~~~
 
 <br>
 
@@ -153,29 +147,26 @@ conf t
   end
 ~~~
 
-<br> 
+
+&nbsp;
+---
+&nbsp;
+
+### Remote Access
 
 ~~~
-!@CoreBABA
-conf t
- hostname CoreBABA-#$34T#
- enable secret pass
- service password-encryption
- no ip domain lookup
- no logging cons
- line cons 0 
-  password pass
-  login
-  exec-timeout 0 0
- line vty 0 14
-  password pass
-  login
-  exec-timeout 0 0
- int vlan 1
-  ip add 10.#$34T#.1.4 255.255.255.0
-  no shut
-  end
+!@cmd
+ping 10.#$34T#.1.2
+ping 10.#$34T#.1.4
+
+nmap -v 10.#$34T#.1.2
+nmap -v 10.#$34T#.1.4
 ~~~
+
+Telnet the following
+- 10.#$34T#.1.2
+- 10.#$34T#.1.4
+
 
 <br>
 <br>
@@ -187,6 +178,8 @@ conf t
 ### 🎯 Exercise 01: [3-Tier] Identify port connections between switches.
 ~~~
 !@Switches
+clear cdp counter
+clear cdp table
 show cdp neighbor
 ~~~
 
@@ -262,6 +255,8 @@ conf t
   end
 ~~~
 
+<br>
+
 - Enable LLDP on D1 & D2, but only allow receiving traffic from A1,A2,A3
 ~~~
 !@D1,D2
@@ -273,68 +268,46 @@ conf t
   end
 ~~~
 
-&nbsp;
+
+<br>
+<br>
+
 ---
 &nbsp;
 
-### Remote Access
+
+### [On-Prem]
 
 ~~~
-!@cmd
-ping 10.#$34T#.1.2
-ping 10.#$34T#.1.4
-
-nmap -v 10.#$34T#.1.2
-nmap -v 10.#$34T#.1.4
+!@CoreTAAS
+conf t
+ lldp run
+ cdp run
+ int range fa0/10-12
+  no cdp enable
+  no lldp transmit
+  lldp receive
+  end
 ~~~
-
-Telnet the following
-- 10.#$34T#.1.2
-- 10.#$34T#.1.4
-
-&nbsp;
----
-&nbsp;
-
-### Frame Forwarding
-*What is the source MAC address of the Telnet session when it is received by CoreTAAS?*
-
-Structure of an Ethernet Frame
-
-| Layer  | Preamble | SFD | MAC Destination | MAC Source | 802.1Q TAG | Ethertype | Payload | FCS | IGP |
-| ---    | ---      | --- | ---             | ---        | ---        | ---       | ---     | --- | --- |
-| Length | 7        | 1   | 6               | 6          | 4          | 2         | 42-1500 | 4   | 12  |
 
 <br>
 
-### Error Handling
-1. __Giants__ - Ethernet Frame received is larger than the maximum allowed size. Misconfigured MTU
-2. __Runts__ - Ethernet Frame received is smaller than the maximum allowed size. Collisions in half-duplex
-3. __CRC__ - Checksum did not match. Faulty cable or media.
-4. __FCS Error__ - Integrity check fail.
-4. __Collisions__ - Transmit on the same medium simultaneously
-5. __Late Collisions__
-6. __Overruns__ - Input buffer overflow
+~~~
+!@CoreBABA
+conf t
+ lldp run
+ no cdp run
+ int range fa0/10-12
+  lldp transmit
+  no lldp receive
+  end
+~~~
 
-<br>
-
-__L2 Technologies__
-1. ARP
-2. VLANs
-   - VTP
-3. SVI
-   - L3 Connectivity
-4. LoadBalance
-   - Etherchannel
-   - Stackwise
-   - VSS
-5. DHCP
-   MAC Learning & Reservation
-   - IP Reservation
  
 &nbsp; 
 ---
 &nbsp;
+
 
 __How to get fired!__
 ~~~
@@ -354,28 +327,41 @@ conf t
  end
 ~~~
 
-&nbsp; 
----
-&nbsp;
-
-### L2 Vulnerabilities (_D3Pentest)
-*Why you should properly protect the switch*
-- VLAN Hopping attack
-- VTP Attack
-- Rogue DHCP Server
-- CDP Flooding
 
 &nbsp;
 ---
 &nbsp;
+
+### Frame Forwarding
+Structure of an Ethernet Frame
+
+| Layer  | Preamble | SFD | MAC Destination | MAC Source | 802.1Q TAG | Ethertype | Payload | FCS | IGP |
+| ---    | ---      | --- | ---             | ---        | ---        | ---       | ---     | --- | --- |
+| Length | 7        | 1   | 6               | 6          | 4          | 2         | 42-1500 | 4   | 12  |
+
+<br>
+
+### Error Handling
+1. __Giants__  
+2. __Runts__  
+3. __CRC__  
+4. __FCS Error__  
+4. __Collisions__  
+5. __Late Collisions__  
+6. __Overruns__  
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
 
 ## Master the five superheroes of switching
 ### 1. QPID (802.1Q)
 
-<br>
-
 __Access vs Trunk Links__
-
 ~~~
 !@CoreTAAS & CoreBABA
 conf t
@@ -390,11 +376,13 @@ conf t
 show int trunk
 ~~~
 
+
 <br>
 <br>
 
 ---
 &nbsp;
+
 
 ### 🎯 Exercise 02: [3-Tier] Trunk the links between switches
 Task 1.
@@ -482,12 +470,12 @@ show int trunk
 </details>
 
 
-
 <br>
 <br>
 
 ---
 &nbsp;
+
 
 ### 2. DARNA (802.1D)
 ### `32768  vs  24576  vs  28672`
@@ -673,9 +661,9 @@ __Best Practice__
 
 <br>
 
-Access Layer                        | spanning-tree portfast, spanning-tree bpduguard enable |
-Distribution Layer (toward Access)  | spanning-tree guard root
-Core/Trunk Links (between switches) | spanning-tree guard loop
+Access Layer                        |   
+Distribution Layer (toward Access)  |   
+Core/Trunk Links (between switches) |   
 
 <br>
 
@@ -836,11 +824,13 @@ Who is __WONDERWOMAN__ (__802.1W__)
 2. Learning (LRN) - Builds MAC address table but does not forward user traffic
 3. Forwarding (FWD) - Forwards user traffic and BPDUs
 
+
 <br>
 <br>
 
 ---
 &nbsp;
+
 
 ### 4. SUPERMAN (802.1S)
 Step 1: Configure VTP
@@ -955,24 +945,12 @@ compared to PVST & RST where each VLANs is its own STP instance.
 > [!IMPORTANT]
 > Configure WinServer 2022 for a RADIUS Server
 
-~~~
-!@CoreTAAS
-conf t
- username admin privilege 15 secret pass
- aaa new-model
- radius server WINRAD
-  address ipv4 10.#$34T#.1.8 auth-port 1812 acct-port 1813
-  key keykeymo
-  exit
- aaa group server radius RADGROUP
-  server name WINRAD
-  exit
- aaa authentication login default group RADGROUP local
- aaa authorization exec default group RADGROUP local
- line vty 0 14
-  login authentication default
-  end
-~~~
+<br>
+
+Requirements:
+- ACTIVE DIRECTORY
+- NETWORK POLICY SERVER (RADIUS)
+
 
 <br>
 <br>
@@ -982,19 +960,13 @@ conf t
 
 ### [3-Tier] Configure AAA-Based local database authentication on C1 & C2 
 
-~~~
-!@C1,C2
-conf t
- username admin priv 15 secret pass
- aaa new-model
- aaa authentication login default local
- aaa authorization exec default local
- aaa authentication enable default enable
- line vty 0 4
-  transport input all
-  login authentication default
-  end
-~~~
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <br>
 <br>
@@ -1099,135 +1071,6 @@ Task3:
 <br>
 <br>
 
-&nbsp;
----
-&nbsp;
-
-### ANSWER
-<details>
-<summary>Show Answer</summary>
-	
-Task1:
-- C1 & C2 must use the open standard protocol for link aggregation.
-- C1 & C2 must both participate in forming link aggregation on all linked ports.
-
-~~~
-!@C1
-conf t
- int range e0/1-3
-  channel-group 102 mode active
- int range e1/1-2
-  channel-group 11 mode active
- int range e2/1-2
-  channel-group 12 mode active
-  end
-~~~
-
-<br>
-
-~~~
-!@C2
-conf t
- int range e0/1-3
-  channel-group 102 mode active
- int range e1/1-2
-  channel-group 21 mode active
- int range e2/1-2
-  channel-group 22 mode active
-  end
-~~~
-
-- On the link between C1 & C2, if the number of bundled ports goes down to 2 or less, the port-channel must go down.
-
-~~~
-!@C1,C2
-conf t
- int po102
-  port-channel min-links 3
-  end
-~~~
-
-<br>
-
-Task2:
-- D1 & D2 must use the open standard protocol for link aggregation. 
-- D1 & D2 must not participate but will form link aggregation on all linked ports.
-
-~~~
-!@D1
-conf t
- int range e1/0,e1/3
-  channel-group 11 mode passive
- int range e2/0,e2/3
-  channel-group 21 mode passive
- int range e1/1-2
-  channel-group 111 mode passive
- int range e2/1-2
-  channel-group 112 mode passive
- int range e3/1-2
-  channel-group 113 mode passive
-  end
-~~~
-
-<br>
-
-~~~
-!@D2
-conf t
- int range e1/0,e1/3
-  channel-group 12 mode passive
- int range e2/0,e2/3
-  channel-group 22 mode passive
- int range e1/1-2
-  channel-group 221 mode passive
- int range e2/1-2
-  channel-group 222 mode passive
- int range e3/1-2
-  channel-group 223 mode passive
-  end
-~~~
-
-<br>
-
-Task3:
-- A1, A2, and A3 must use the open standard protocol for link aggregation. 
-- A1, A2, and A3 must participate in forming link aggregation on all linked ports.
-
-~~~
-!@A1
-conf t
- int range e1/1-2
-  channel-group 111 mode active
- int range e2/1-2
-  channel-group 221 mode active
-  end
-~~~
-
-<br>
-
-~~~
-!@A2
-conf t
- int range e1/1-2
-  channel-group 112 mode active
- int range e2/1-2
-  channel-group 222 mode active
-  end
-~~~
-
-<br>
-
-~~~
-!@A3
-conf t
- int range e1/1-2
-  channel-group 113 mode active
- int range e2/1-2
-  channel-group 223 mode active
-  end
-~~~
-
-</details>
 
 <br>
 <br>
@@ -1742,6 +1585,7 @@ config t
   end
 ~~~
 
+
 <br>
 <br>
 
@@ -1824,7 +1668,7 @@ show int status err-disable
 ---
 &nbsp;
 
-## Dynamic ARP Inspection & DHCP Snooping
+## Dynamic ARP Inspection & DHCP Snooping 
 ~~~
 !@CoreBABA
 conf t
@@ -1850,6 +1694,7 @@ conf t
  ip arp inspection validate src-mac dst-mac ip
  end
 ~~~
+
 
 <br>
 <br>
@@ -1924,18 +1769,21 @@ csim start #$34T#00
 <br>
 
 ---
+&nbsp;
 
 ### IP Phones
 __Requirements for IP Phones to work__
-7.
-6.
-5.
-4. 
-3. 
-2.
-1.
+1. &nbsp;
+2. &nbsp;
+3. &nbsp;
+4. &nbsp;
+5. &nbsp;
+6. &nbsp;
+7. &nbsp;
+
 
 <br>
+
 
 ~~~
 !@CUCM
@@ -2211,26 +2059,6 @@ conf t
 !@EDGE
 conf t
  ip routing
- ip route 10.11.0.0 255.255.0.0 200.0.0.11 254
- ip route 10.12.0.0 255.255.0.0 200.0.0.12 254
- ip route 10.21.0.0 255.255.0.0 200.0.0.21 254
- ip route 10.22.0.0 255.255.0.0 200.0.0.22 254
- ip route 10.31.0.0 255.255.0.0 200.0.0.31 254
- ip route 10.32.0.0 255.255.0.0 200.0.0.32 254
- ip route 10.41.0.0 255.255.0.0 200.0.0.41 254
- ip route 10.42.0.0 255.255.0.0 200.0.0.42 254
- ip route 10.51.0.0 255.255.0.0 200.0.0.51 254
- ip route 10.52.0.0 255.255.0.0 200.0.0.52 254
- ip route 10.61.0.0 255.255.0.0 200.0.0.61 254
- ip route 10.62.0.0 255.255.0.0 200.0.0.62 254
- ip route 10.71.0.0 255.255.0.0 200.0.0.71 254
- ip route 10.72.0.0 255.255.0.0 200.0.0.72 254
- ip route 10.81.0.0 255.255.0.0 200.0.0.81 254
- ip route 10.82.0.0 255.255.0.0 200.0.0.82 254
- ip route 10.91.0.0 255.255.0.0 200.0.0.91 254
- ip route 10.92.0.0 255.255.0.0 200.0.0.92 254
- no ip route 10.#$34T#.0.0 255.255.0.0 200.0.0.#$34T# 254
- ip route 10.#$34T#.0.0 255.255.0.0 10.#$34T#.#$34T#.4 254
  !
  router ospf 1
   router-id #$34T#.0.0.1
@@ -2328,8 +2156,9 @@ conf t
 !@EDGE
 conf t
  ip route 0.0.0.0 0.0.0.0 200.0.0.1
- ip name-server 10.#$34T#.1.10
+ ip name-server 8.8.8.8
  ip domain lookup
+ ip domain lookup source int g0/0/0
  end
 ~~~
 
@@ -2340,6 +2169,8 @@ conf t
 &nbsp;
 
 ### Network Assurance (HSRP)
+
+__PRIMARY__
 ~~~
 !@D1
 conf t
@@ -2353,10 +2184,39 @@ conf t
 <br>
 
 ~~~
+!@CoreTAAS
+config t
+ hostname CoreTAAS-#$34T#-(PLDT)
+ Track 1 Int gi 0/1 line-protocol
+ int vlan 1
+  standby 1 ip 10.#$34T#.1.16
+  standby 1 preempt
+  standby 1 Priority 150
+  standby 1 Track 1 decrement 60
+  end
+~~~
+
+<br>
+
+__SECONDARY__
+~~~
 @D2
 conf t
  interface Vlan 10
   standby 1 ip 10.2.1.254
+  end
+~~~
+
+<br>
+
+~~~
+!@CoreBABA
+config t
+ hostname CoreBABA-#$34T#-(GLOBE)
+ Int vlan 1
+  standby 1 ip 10.#$34T#.1.16
+  standby 1 preempt
+  standby 1 Priority 100
   end
 ~~~
 
@@ -2367,6 +2227,19 @@ conf t
 &nbsp;
 
 ### Network Tunneling
+~~~
+!@EDGE
+conf t
+ no router ospf 1
+ router ospf 1
+  router-id #$34T#.0.0.1
+  network 10.#$34T#.#$34T#.0 0.0.0.255 area 0
+  default-information originate always
+  end
+~~~
+
+<br>
+
 ~~~
 !@EDGE
 conf t
@@ -2436,7 +2309,6 @@ conf t
 &nbsp;
 
 ### OSPF vs EIGRP
-*Does OSPF Routers form neighborships behind NAT devices?*
 
 <br>
 
@@ -2481,15 +2353,15 @@ conf t
 ---
 &nbsp;
 
-### Review
-Requirements for IP Phones to work
-7. App
-6. G711 G729
-5. RTP
-4. TFTP Server, SCCP: , SIP:
-3. IP
-2. MAC
-1. PoE
+### Review  
+Requirements for IP Phones to work  
+1. &nbsp;
+2. &nbsp;
+3. &nbsp;
+4. &nbsp;
+5. &nbsp;
+6. &nbsp;  
+7. &nbsp;
 
 <br>
 
@@ -2519,5 +2391,3 @@ conf t
  no monitor session 1 destination int fa0/1,fa0/9
  end
 ~~~
-
-
