@@ -5,8 +5,23 @@
 # 👋 Welcome to Rivan
 *"There's no better teacher than experience"*
 
+
+&nbsp;
+## 📋 Prove what you are doing.
+ - Create a Github account: https://github.com/
+
+<br>
+
+Import the repositories.
+ - Rivan_Day1 : https://github.com/art-stacks/Rivan_Day1
+ - SecPlus701 : https://github.com/rivancorp/SECplus701
+ - RivanSecPlus701 : https://github.com/rivancorp/RivanSecPlus701
+
 <br>
 <br>
+
+---
+&nbsp;
 
 ## 📂 Create your own folder in the desktop
 ~~~
@@ -27,10 +42,149 @@ dir
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-## 📤 IT Service Management
+<br>
+<br>
+
+---
+&nbsp;
+
+## 🧱 Hierarchical Network Design
+*What is the most important part of a network? __The Core__*
+
+<br>
+
+Most common kinds of network architectures.
+ - 2-tier                 __Cisco Collapsed Campus Core__
+ - 3-tier                 __Enterprise Network Design__
+ - Spine-leaf             __Data Center Fabric__
+
+<br>
+
+CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
+  > [!NOTE]
+  >*"A Network Engineer MUST avoid a single point of failure.
+   __Always have a backup.__"*
+
+<br>
+
+Examples:
+  | __Protocol__                 | __Supported Devices__    |
+  | ---                          | ---                      |
+  | Etherchannel                 | Cisco Catalyst..and more |
+  | FlexStack (Master Switch)    | Cisco 2960 & 6500 Series |
+  | VSS (Single logical switch)  | NXOS 9k                  |
+  | SSO (Stateful Switchover)
+  | NSF (Non-stop Forwarding)
+
+<br>
+<br>
+
+---
+&nbsp;
+
+## 🔌 Wired and wireless network.
+*How many devices do you have right now that can connect to the internet?*
+
+<br>
+
+> [!NOTE]
+> A network must be Flexible. Reliable. __AVAILABLE__.
+
+<br>
+
+### 📶 PLDT AP vs Wireless Controller & Autonomous AP
+
+<br>
+
+Wifi Mesh
+ - Wired Backhaul
+ - Wireless Backhaul
+
+<br>
+
+Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/)
+
+  - WiFi 6     
+  - WiFi 7     
+
+<br>
+<br>
+
+---
+&nbsp;
+
+## 🔍 Implement security solutions.
+*What is more valuable than gold? __Data__*
+
+<br>
+
+Network security infrastructure
+ - NGFW, UTM, IDS
+ - Security Policies
+     - Windows Local Security Policy
+ - Surveillance
+     - IP Cameras (__CAM6__ & __CAM8__)
+
+<br>
+
+Made in US 🇺🇸 vs Made in China 🇨🇳
+
+<br>
+<br>
+
+---
+&nbsp;
+
+# 🔧 Access the CLI
+*How can you tell if a device is expensive? It has a __Console Port__*
+
+<br>
+
+Serial Cable
+  - VGA, USB
+  - Ugreen
+
+<br>
+<br>
+
+---
+&nbsp;
+
+# 📤 IT Service Management
+*If it is not documented, it never existed.*
+- ITSM
+- CMDB
+
+<br>
+
 ### Lab Setup
-__1. Run the *SOC-IR* virtual machine.__  
+__1. Run the *IR-ElasticSys* virtual machine & Setup a WINSERVER VM__  
 
 <br>
 
@@ -43,7 +197,7 @@ __2. VM Login information:__
 __3. Get the IP address of the VM.__  
 Enter the command inside the VM
 ~~~bash
-@SOC-IR
+@IR-ElasticSys
 ip addr
 ~~~
 
@@ -53,11 +207,11 @@ __4. Add a hostname mapping.__
 Access the __hosts__ file located on `c:\Windows\System32\drivers\etc`  
 Then, enter add the following mapping to the hosts file:
 ~~~
-208.8.8.144  rivan.cloudsoc.com
+192.168.102.133  rivan.cloudsoc.com
 ~~~
 
 > [!Note]
-> __208.8.8.144__ must be your virtual machine IP address.
+> __192.168.102.133__ must be your virtual machine IP address.
 
 <br>
 
@@ -72,29 +226,10 @@ ping rivan.cloudsoc.com
 &nbsp;
 
 ## 🔄 ITSM Process | Implementing Cybersecurity best practices
-### 👤 Upper Management
-http://rivan.cloudsoc.com:8069  
-> Username: itil@rivanschool.com  
-> Password: C1sc0123
-
-<br>
-
-![otrs_odoo](img/oss_odoo.JPG)
-
-
-&nbsp;
----
-&nbsp;
-
 ### 🏃 Service Delivery Team
 http://rivan.cloudsoc.com/otrs/index.pl  
-> Username: root@localhost  
-> Password: C1sc0123
-
-<br>
-
-![otrs_index](img/oss_index.JPG)
-
+> Username: admin   
+> Password: C1sc0123  
 
 &nbsp;
 ---
@@ -105,10 +240,6 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 > Username: user1  
 > Password: C1sc0123
 
-<br>
-
-![otrs_customer](img/oss_customer.JPG)
-
 &nbsp;
 ---
 &nbsp;
@@ -116,26 +247,20 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 ## 📦 Operational Support System
 *How easy is it to bring home items from your company?*
 
-- AMS (Asset Management System)
-- IMS (Inventory Management System)
-- CMDB (Configuration Management Databases)
+- &nbsp;
+- &nbsp;
+- &nbsp;
 
 <br>
 
 ### 🎯 Exercise 01: Register Windows Server 2025 to your company's database.
 
 __1. Access CMDB__  
-<br>
-
-![cmdb](img/oss_01.JPG)
 
 <br>
 <br>
 
 __2. Select the appropriate Item Class__  
-<br>
-
-![item_class](img/oss_02.JPG)
 
 <br>
 <br>
@@ -171,7 +296,7 @@ Get-WmiObject win32_bios | select Serialnumber
 &nbsp;
 
 ## 🚀 Deploy CoreTAAS
-### ⭐ 1. Register CoreTAAS to your company's database, including a *Workorder* to configure the devices.
+### ⭐ 1. Register CoreTAAS to your company's database, including a *FAQ* to configure the devices.
 
 ~~~
 !@CoreTaas
@@ -217,17 +342,6 @@ conf t
 <br>
 <br>
 
-__Create a Custom User Agent__  
-`Admin` > `Agents` > `Add Agents`
-
-<br>
-
-__Add an Agent to the Work Order__  
-`Workorder` > `History` > `Show Workorder` > `Add Agent`
-
-<br>
-<br>
-
 ---
 &nbsp;
 
@@ -243,6 +357,7 @@ __Add an Agent to the Work Order__
 
 ## Know the jobs of a Switch
 ### ⚙️ 1. __POE__
+*Are there switches that don't support POE? __Yes__.*
 > [!NOTE]
 > If you need PoE functionality on a non-PoE switch, use a PoE injector.
 
@@ -250,13 +365,11 @@ __Add an Agent to the Work Order__
 
 | IEEE Standards  | Power Output |
 | ---             |     ---      |
-| 802.3af (PoE)   |              |
-| 802.3at (PoE+)  |              |
-| 802.3bt (PoE++) |              |
+| 802.    (PoE)   |              |
+| 802.    (PoE+)  |              |
+| 802.    (PoE++) |              |
 
-&nbsp;
----
-&nbsp;
+<br>
 
 Which device consumes the most power? __SPI - `show power inline`__
 ~~~
@@ -266,10 +379,10 @@ show power inline
 
 <br>
 
-> __ITSM__  
-> Title: 1st Job of a Switch - PoE  
-> Description: Purchase switches with PoE - 802.3af,at,bt  
-> Justification: Switches need to supply the right amount of power depending on the needs of end devices.  
+> __CMDB__  
+> Name: CoreBABA  
+> Description: 1st Job of a Switch - PoE  
+>   Switches need to supply the right amount of power depending on the needs of end devices.  
 
 <br>
 <br>
@@ -278,13 +391,16 @@ show power inline
 &nbsp;
 
 ### ⚙️ 2. SVI (Switch Virtual Interface)
+*Why segment network traffic? __WireShark__*
 
 <br>
 
-> __ITSM__  
+> __FAQ (Knowledge Database)__   
 > Title: 2nd Job of a Switch - SVI  
-> Description: Configure IP addresses on switches  
-> Justification: Segment network traffic to reduce security risks and network traffic congestion.  
+> Symptom: Lack of IP addresses.  
+> Problem: Prevents remote management and L3 operations   
+> Solution:   
+
 
 <br>
 
@@ -361,6 +477,7 @@ __BUT__
 &nbsp;
 
 ### 🔐 Confidentiality
+
 ### 5 Phases of Ethical Hacking
 __1. Reconnaissance - gather information.__
 
@@ -440,6 +557,23 @@ conf t
 
 <br>
 
+__Access Wireshark__
+
+<br>
+
+| Attempt    | Answer                          |
+| ---        | ---                             |
+| 1:Username | What did you eat last night?    | 
+| 2:Password | What is your favorite dessert?  |
+| ###        | ###                             |
+| 1:Username | What's the name of your school? |
+| 2:Password | What's your course in college?  |
+| ###        | ###                             |
+| 1:Username | admin                           |
+| 2:Password | pass                            |
+
+<br>
+
 __Implement Secure Protocols: SSH__
 
 | 🔑 | Public | Private | 🔑 |
@@ -468,8 +602,12 @@ conf t
 ### ✉️ Integrity
 ~~~
 !@cmd
-certutil -hashfile [FILE] sha256
+certutil -hashfile SERVER_EVAL_x64FRE_en-us.iso md5
 ~~~
+
+<br>
+
+Search on Google: `SERVER_EVAL_x64FRE_en-us.iso md5 hash`
 
 <br>
 <br>
@@ -531,11 +669,54 @@ show int po1 | inc BW
 | Large Biz   | Core Switch |
 
 <br>
+<br>
 
-> __ITSM__  
+🔴 __Creating a Rogue DHCP Server:__
+- WireShark
+- Pentest
+
+<br>
+
+__D3Pentest__
+~~~
+!@linux
+nmcli connection add \
+type ethernet \
+con-name TUNAYNALAN \
+ifname eth0 \
+ipv4.method manual \
+ipv4.addresses 10.#$34T#.1.20/24 \
+autoconnect yes
+
+nmcli connection up TUNAYNALAN
+~~~
+
+
+<br>
+
+
+| Keys       | Value         |
+| ---        | ---           |
+| Server IP  | 10.#$34T#.1.20    |
+| Start      | 10.#$34T#.1.50    |
+| End        | 10.#$34T#.1.100   |
+| Lease      | 1200          |
+| Renew      | 1200          |
+| SubnetMask | 255.255.25.50 |
+| Router     | 10.#$34T#.1.4     |
+| DNS-Server | 10.#$34T#.1.20    |
+| Domain     | FAKEMGMT.COM      |
+
+
+<br>
+
+
+> __FAQ (Knowledge Database)__   
 > Title: 3rd Job of a Switch - DHCP  
-> Description: Provide IP addresses, and more, to end devices.  
-> Justification: Devices needs IP address to communicate within a network.  
+> Symptom: Lack of IP addresses.  
+> Problem: If End devices do not have IP addresses they will not be able to communicate across the network.
+> Solution:
+
 
 <br>
 
@@ -571,6 +752,20 @@ conf t
   end
 ~~~
 
+
+<br>
+
+
+🔴 __DHCP Starvation Attack:__
+
+| States      | Type      |
+| ---         | ---       |
+| Discover    | Broadcast |
+| Offer       | Unicast   |
+| Request     | Broadcast |
+| Acknowledge | Unicast   |
+
+
 <br>
 <br>
 
@@ -597,10 +792,12 @@ Just because there's an SVI doesn't mean there's a VLAN.
 
 <br>
 
-> __ITSM__  
-> Title: 4th Job of a Switch - VLAN Creation & VLAN Management  
-> Description: Create VLANs and assign switchports to a specific VLAN.  
-> Justification: By default, all switchports belong to VLAN 1.  
+> __FAQ (Knowledge Database)__   
+> Title: 4th Job of a Switch - VLAN Creation & VLAN Management   
+> Symptom: Network devices share the same broadcast domain.    
+> Problem: Lack of traffic segmentation on L2 can lead to a broadcast storm.  
+> Solution:  
+
 
 <br>
 
@@ -663,38 +860,17 @@ conf t
 ---
 &nbsp;
 
-## 📠 Enterprise Communication
-*How often are meetings conducted in your work place?*
-
-<br>
-
-Cisco Unified Call Manager | [Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
-  - POTS (__Analog__)
-  - VOIP (__ePhone__)
-
-&nbsp;
----
-&nbsp;
-
-### Requirements to make IP Phones Operational
-7.
-6.
-5.
-4.
-3. I__  _____       Did your phone get the correct IP?
-2. M__  _____
-1. P__
-
-<br>
-<br>
-
----
-&nbsp;
-
 ## ⚙️ 5. MAC Learning & MAC Reservation
 *What is in a MAC Address?*
 - OUI (Organizationally Unique Identifier)
-- UI
+- NIC
+
+<br>
+
+~~~
+!@cmd
+nmap -sP -sn 192.168.1.0/24
+~~~
 
 <br>
 
@@ -702,7 +878,7 @@ How switches forward data? __Frame Forwarding__
 
 ~~~
 !@Windows
-arp /ah
+arp /a
 
 !@Linux
 arp -a
@@ -727,10 +903,17 @@ show mac address-table
 
 Assign a specific IP address to a device.
 
-> __ITSM__  
-> Title: 5th Job of a Switch - MAC Learning & MAC Reservation  
-> Description: Reserve IP addresses for Cameras  
-> Justification: To maintain reliable network access.  
+
+<br>
+
+
+> __FAQ (Knowledge Database)__   
+> Title: 5th Job of a Switch - MAC Learning & MAC Reservation   
+> Symptom: Cameras have dynamic IP addresses
+> Problem: Certain endpoints must have a static IP address
+> Solution:  
+
+<br>
 
 ~~~
 !@CoreBABA
@@ -778,19 +961,655 @@ Hack your LAN to better protect it.
 > Username: kali  
 > Password: kali  
 
+3. Run yersinia
+
+~~~
+@Kali
+sudo yersinia -G
+~~~
+
 <br>
 
-> __ITSM__  
-> Title: Protect the most important switch in your office
-> Description: - RootBridge = CoreTAAS : Primary
->              - 2ndRootBridge = CoreBABA : Secondary
-> Justification: To protect the network from layer 2 attacks.
+4. Perform various Attacks.
+
+Verify:
+~~~
+!@CoreBABA
+show process cpu | inc uti
+~~~
+
 
 <br>
 <br>
 
 ---
 &nbsp;
+
+
+## ITSM Change Process
+
+### STEP 1 - User reports an issue to [Tier 1 NOC] with the internet slowing down  
+
+__Ticket__  
+- Type: Incident  
+- To: [NOC] Tier 1 - Monitoring & First Response  
+- Service: [NOC] Infrastructure & Application Monitoring  
+- SLA: Performance Management SLA  
+- Subject: Network Issue  
+- Priority: 4 High  
+
+<br>
+
+- Text:   
+~~~
+The network is very slow, and we are unable to reliably connect to services such as servers and printers. 
+Additionally, IP phone extensions/numbers are disappearing intermittently. 
+This is impacting our ability to make and receive calls.
+~~~
+
+
+&nbsp;
+---
+&nbsp;
+
+
+__Admin [Rivan Cyber] responds to ticket.__  
+- Reply  
+~~~
+Hi user1,
+
+Thank you for reporting this issue.
+
+We are currently investigating the network performance problems and the IP phone registration issue. 
+Initial checks show possible network congestion or a connectivity disruption affecting multiple services.
+
+Thank you for your patience while we work to resolve this.
+
+Best regards,
+IT Support Team
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 2 - User checks the logs, then discover that Certain Switches have unusually high traffic.
+~~~
+!@Cisco
+show process cpu | inc uti
+~~~
+
+
+<br>
+
+
+`:: Move ::`  Escalate the issue to [Tier 2 NOC] 
+
+
+<br>
+
+
+__Change Owner__
+- Subject: Network Issue T2 Escalation
+- Text: 
+~~~
+Issue summary:
+  Network extremely slow
+  Cannot access servers and printers
+  IP phones losing registration
+  Multiple users affected
+
+Troubleshooting performed by Tier 1:
+  Verified issue affects multiple users
+  Confirmed both wired/wireless impacted
+  Restarted affected workstation(s)
+  Verified no local NIC errors
+  Basic connectivity tests failed/intermittent
+
+Reason for escalation:
+  Issue appears to be infrastructure-related (core switch / firewall / VoIP system). 
+  Requires Tier 2 investigation.
+~~~
+
+
+&nbsp;
+---
+&nbsp;
+
+
+__Update the User__
+- Reply
+~~~
+Hi user1,
+
+Your ticket has been escalated to our Tier 2 Network Team for further investigation. 
+They are currently reviewing the infrastructure components involved.
+
+We will provide updates as soon as more information is available.
+
+Thank you for your patience.
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 3 - Create an ITSM Change with a Work Order for Change [Request] Creation 
+
+__ITSM Change__
+- Title: Implement Port Security on Access Switches to Prevent MAC Flooding
+- Description: 
+~~~
+Network is currently slow caused by a traffic congestion from CoreSwitches
+CoreSwitches consuming high CPU usage caused by a flood of MAC Addresses.
+Switches are currently lacking proper security implementations to prevent L2 attacks.
+~~~
+
+
+<br>
+
+
+- Justification:
+~~~
+CPU utilization for five seconds: 99%/0%; one minute: 6%; five minutes: 6%
+ 272           0           2          0  0.00%  0.00%  0.00%   0 Routing Topology
+~~~
+
+
+<br>
+
+
+- Category: 4 High
+- Impact: 4 High
+- Priority: 4 High
+
+
+&nbsp;
+---
+&nbsp;
+
+
+__WorkOrder [REQUEST]__
+- Title: Change Request Creation
+- Workorder Type: Approval
+- Planned Time: +1 Day
+- Description:  
+~~~
+Users reported slow connectivity. Investigation identified high CPU utilization on Cisco access switch due to MAC address table flooding. The switch is vulnerable to MAC flooding attack.
+Requesting change approval to implement port security configuration on affected access ports.
+
+
+Reason for Change:
+  Mitigate network traffic congestion.
+  Prevent recurrence of MAC flooding attack.
+  Improve switch stability.
+  Enhance Layer 2 security posture.
+
+
+Proposed Solution:
+  Enable port security.
+  Limit MAC addresses per port.
+  Enable violation restrict/shutdown mode.
+  Enable sticky MAC where applicable.
+~~~
+
+
+<br>
+<br>
+
+
+- Link: Hardware (CoreSwitch)  
+- Involved Persons: Manager & CAB (Change Advisory Board)  
+- WorkOrder Agent: Admin  
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 4 - Create a Work Order for [Impact Analysis] & Plan Assessment
+
+__ITIL-Based Impact Analysis Framework__  
+- Identify the Scope of the Change - Determine affected users, services, network, hardware, etc  
+- Identify Stakeholders - Who are involved in managing the change  
+- Assess Impact Levels - Structured Categories  
+- Identify Risks - Document mitigation and rollback plans.  
+- Analyze Dependencies - Map related systems and processes  
+- Document Findings - Summary of scope, stakeholders, risks, impact, and dependencies  
+- Decision Support - CAB approval, Scheduling  
+
+
+&nbsp;
+---
+&nbsp;
+
+
+__WorkOrder [IMPACT ANALYSIS]__  
+- Title: Technical & Risk Assestment / Action Plan  
+- Workorder Type: Approval  
+- Planned Time: +1 Day  
+- Description:  
+~~~
+Technical Analysis
+Enabling port security may:
+  Temporarily disrupt connected devices
+  Cause port shutdown if misconfigured
+  Requires maintenance window
+  Minimal downtime expected (per access port configuration)
+  
+  
+Risk Assessment:
+Risk	            Likelihood	   Impact	Mitigation
+Port shutdown	    Medium	       Medium	Configure restrict mode first
+User disconnection	Low	Low	       Change   during maintenance window
+Misconfiguration	Low	Medium	   Peer     review config
+
+
+Impact Scope
+Affected Devices:
+Cisco Access Switch SW-ACC-01
+SW-ACC-02
+
+
+Affected Users:
+Office Floor 2 (~45 users)
+No impact to core or WAN
+
+
+Backout Plan
+!@Switch
+conf t
+ int range fa0/1-12
+  no switchport port-security
+  shut
+  no shut
+  end
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 5 - Create a Work Order for [Approval/Denial]
+CAB (Change Advisory Board) Members:
+- Network Manager
+- IT Operations Lead
+- Security Officer
+
+
+&nbsp;
+---
+&nbsp;
+
+
+__Work Order [APPROVAL/DENIAL]__  
+- Title:  CAB Review Approval/Denial  
+- Workorder Type: Decision  
+- Planned Time: +1 Day  
+- Description:  
+~~~
+Approval Considerations
+- Minimal downtime
+- Security Imporvement
+- Backout Plan
+
+Decision:
+ Proposed Maintenance Window
+ Schedule: 22:00 - 23:30
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 6 - Create a Work Order for [Implementation]  
+
+__Work Order [IMPLEMENTATION]__  
+Title: Implementation Procedure   
+- Workorder Type: Workorder  
+- Planned Time: +1 Day  
+- Description:  
+~~~
+Pre-implementation Tasks:
+Backup Configs:
+
+!@Cisco
+copy run start
+copy run ftp:
+
+- Save external backup to TFTP
+- Notify users of maintenance window
+- Confirm monitoring alerts configured
+
+Implementation:
+PORT SECURITY
+!@CoreBABA
+conf t
+interface range fa0/6,fa0/8
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+end
+
+DHCP SNOOPING
+!@CoreBABA
+conf t
+ ip dhcp snooping
+ ip dhcp snooping vlan 1,10,50,100
+ !
+ int po1
+  ip dhcp snooping trust
+  exit
+ int fa0/1
+  no ip dhcp snooping trust
+  exit
+ !
+ no ip dhcp snooping information option
+ !
+ interface range fa0/1-12
+  ip dhcp snooping limit rate 10
+  end
+show ip dhcp snooping
+show ip dhcp snooping binding
+
+
+DAI Dynamic Arp Inspection
+!@CoreBABA
+conf t
+ ip arp inspection vlan 1,10,50,100
+ !
+ int po1
+  ip arp inspection trust
+  exit
+ !
+ arp access-list PC-HOST
+  permit ip host 10.#$34T#.1.10 mac host ___.___.___.___
+  exit
+ ip arp inspection filter PC-HOST vlan 1
+ !
+ int fa0/1
+  no ip arp inspection trust
+  end
+show ip arp inspection
+show ip arp inspection statistics
+ 
+ 
+Post Implementation
+- CPU utilization normalized
+- MAC address table state
+- No unexpected port shutdowns
+- Users confirmed stable connectivity [Ticket Reply]
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 7 - Create a Work Order for Post Implementation Review PIR [Report]  
+
+__Work Order [REPORT/REVIEW]__  
+Title: PIR Incident Report  
+- Workorder Type: PIR  
+- Planned Time: +1 Day  
+- Description:  
+~~~
+Review Date: 3 days - 1 week after change
+
+Port security was configured on the core switches to improve network security by limiting MAC addresses per port and preventing unauthorized device connections.
+The objective was to enhance network access control and reduce the risk of rogue devices.
+
+Observations
+- CPU usage reduced from 85% → 18%
+- No further MAC flooding detected
+- No user complaints
+- Port violations logged correctly
+
+Lessons Learned
+- Port security was not enabled by default
+- Access switches lacked L2 security hardening baseline
+- Need standard switch hardening template
+
+
+Ideally Performed with RCA (Root Cause Analysis)
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 8 - Create Conditions to allow Change States
+
+__A Review on the 5 ITSM Change Process__
+
+1. __REQUEST__
+
+| OBJECT    | SELECTOR | ATTRIBUTE | OPERATOR | VALUE            |
+| ---       | ---      | ---       | ---      | ---              |
+| WORKORDER | REQUEST  | STATE     | IS       | ACCEPTED         |
+|           |          |           |          |                  |
+| CHANGE    | 0000xxxx | STATE     | SET      | PENDING APPROVAL |
+
+
+<br>
+
+2. __IMPACT ANALYSIS__
+
+| OBJECT    | SELECTOR         | ATTRIBUTE | OPERATOR | VALUE            |
+| ---       | ---              | ---       | ---      | ---              |
+| WORKORDER | IMPACT ANALYSIS  | STATE     | IS       | ACCEPTED         |
+|           |                  |           |          |                  |
+| CHANGE    | 0000xxxx         | STATE     | SET      | APPROVED         |
+
+
+<br>
+
+3. __APPROVAL__
+
+| OBJECT    | SELECTOR         | ATTRIBUTE | OPERATOR | VALUE            |
+| ---       | ---              | ---       | ---      | ---              |
+| WORKORDER | APPROVAL         | STATE     | IS       | ACCEPTED         |
+|           |                  |           |          |                  |
+| CHANGE    | 0000xxxx         | STATE     | SET      | IN PROGRESS      |
+
+
+<br>
+
+4. __IMPLEMENTATION__
+
+| OBJECT    | SELECTOR         | ATTRIBUTE | OPERATOR | VALUE            |
+| ---       | ---              | ---       | ---      | ---              |
+| WORKORDER | IMPLEMENTATION   | STATE     | IS       | ACCEPTED         |
+|           |                  |           |          |                  |
+| CHANGE    | 0000xxxx         | STATE     | SET      | PENDING PIR      |
+
+
+<br>
+
+5. __REVIEW/REPORT__
+
+| OBJECT    | SELECTOR | ATTRIBUTE | OPERATOR | VALUE   |
+| ---       | ---      | ---       | ---      | ---     |
+| WORKORDER | REVIEW   | STATE     | IS       | CLOSED  |
+|           |          |           |          |         |
+| CHANGE    | 0000xxxx | STATE     | SET      | SUCCESS |
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+### STEP 9 - Report on every single Work Order to Change states
+
+1. __REQUEST__
+- Formally propose a change to IT infrastructure, service, or configuration.  
+
+<br>
+
+This stage ensures:  
+  The change is documented  
+  The business need is clear  
+  Initial scope is defined  
+
+<br>
+
+Terms:
+  __RFC (Request for Change)__   
+  __Change Record__    
+  __Change Initiator__   
+  __Business Justification__    
+  __Change Category__    
+  __Priority__   
+
+
+&nbsp;
+---
+&nbsp;
+
+
+2. __IMPACT ANALYSIS__
+- Assess risk, impact, dependencies, and feasibility before approval.
+
+<br>
+
+- Identify affected services and users
+- Analyze technical dependencies
+- Evaluate risk level
+- Estimate downtime
+- Define rollback plan
+- Assign risk score
+
+<br>
+
+Terms:  
+  __Impact__  
+  __Risk__  
+  __Risk Matrix__  
+  __CI (Configuration Item)__  
+  __Dependency Mapping__  
+  __Rollback Plan__  
+  __Mitigation Plan__  
+
+<br>
+
+
+&nbsp;
+---
+&nbsp;
+
+
+3. __APPROVAL/DENIAL__
+- Ensure governance and business alignment before execution.  
+
+<br>
+
+Present change to CAB  
+Review risk & impact analysis  
+Approve, reject, or request modification  
+Schedule implementation window  
+
+<br>
+
+Terms:  
+  __CAB (Change Advisory Board)__   
+  __ECAB__   
+  __Change Manager__   
+  __Approval Workflow__   
+  __Segregation of Duties__    
+  __Compliance & Audit Trail__    
+
+
+&nbsp;
+---
+&nbsp;
+
+
+4. IMPLEMENTATION
+- Execute the approved change in a controlled and documented manner.
+
+<br>
+
+Terms:
+  __Change Window__
+  __Maintenance Window__
+  __Work Orders__
+  __Deployment Plan__
+  __Backout Plan__
+  __Release Management__
+  __Technical Validation__
+
+<br>
+
+Control Mechanisms  
+  - &nbsp;
+  - &nbsp;
+  - &nbsp;
+  - &nbsp;
+  
+
+&nbsp;
+---
+&nbsp;
+
+  
+5. REVIEW/REPORT
+- Evaluate effectiveness and capture lessons learned.
+
+<br>
+
+Conduct PIR meeting  
+Compare expected vs outcome  
+Identify Root Cause  
+Update documentation  
+
+<br>
+
+Terms:  
+  __PIR (Post Implementation Review)__  
+  __RCA (Root Cause Analysis)__   
+  __Lessons Learned__  
+  __KPI Review__  
+  __Change Success Rate__  
+  __Continuous Improvement__  
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
 
 ## 🔒 Secure Layer 2 Network
 *Why should you buy an expensive switch?*
@@ -1036,7 +1855,52 @@ copy run start
 &nbsp;
 
 ## 🔧 Configure CUCM
-### 📠 Setup a mini call center
+### 📠 Enterprise Communication   
+
+Cisco Unified Call Manager | [Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
+  - POTS (__Analog__)
+  - VOIP (__ePhone__)
+
+
+<br>
+
+> __CMDB__  
+> Name: CUCM  
+> Description:  Establish a Cybercrime hotline via Call Control System
+
+<br>
+
+| PBX (Private Branch Exchange) | PSTN (Public Switched Telephone Network)  |
+| ---                           | ---                                       |
+| Private Carrier               | Public Carrier Infrastructure             |
+| Trad (Analog/Digital)         | Analog (POTS)                             |
+| IP PBX (VoIP-Based)           | ISDN (Integrated Service Digital Network) |
+| Cloud PBX (Hosted)            | T1/E1                                     |
+
+
+&nbsp;
+---
+&nbsp;
+
+### Requirements to make IP Phones Operational
+1. &nbsp;
+2. &nbsp;
+3. &nbsp;
+4. &nbsp;
+5. &nbsp;
+6. &nbsp;
+7. &nbsp;
+
+
+<br>
+
+> __FAQ (Knowledge Database)__   
+> Title: Bootstrap Configurations for CUCM   
+> Symptom: Newly Procured  
+> Problem: No Configurations  
+> Solution:  
+
+<br>
 
 ~~~
 !@CUCM
@@ -1074,6 +1938,12 @@ conf t
 *Why do companies still use Analog phones?*
 
 <br>
+
+> __FAQ (Knowledge Database)__   
+> Title: 1st Job of a Call Manager - Analog Phones   
+> Symptom: Busy dial when pressing any button  
+> Problem: No DN Assigned  
+> Solution:  
 
 ~~~
 !@CUCM
@@ -1126,13 +1996,23 @@ conf t
 *What kind of phones do enterprise use?*
 
 ### Requirements to make IP Phones Operational
-7.
-6.
-5.
-4. T___:  S___:  S__:
-3. IP Address
-2. MAC Address
-1. Power (PoE)
+1. &nbsp;
+2. &nbsp;
+3. &nbsp;
+4. &nbsp;
+5. &nbsp;
+6. &nbsp;
+7. &nbsp;
+
+
+<br>
+
+> __FAQ (Knowledge Database)__   
+> Title: 2nd Job of a Call Manager - IP Phones   
+> Symptom: Lack of IP Phone DN Configurations  
+> Problem: No Configuration Files fo IP Phones  
+> Solution:
+
 
 <br>
 <br>
@@ -1230,6 +2110,15 @@ conf t
 &nbsp;
 
 ## ⚙️ 3. Video Calls
+
+> __FAQ (Knowledge Database)__   
+> Title: 3rd Job of a Call Manager - Video Conference   
+> Symptom: Lack of Video  
+> Problem: Video does not activate during calls  
+> Solution:
+
+<br>
+
 ~~~
 !@CUCM
 conf t
@@ -1253,6 +2142,16 @@ end
 &nbsp;
 
 ## ⚙️ 4. Allow Incoming & Outgoing Calls
+
+> __FAQ (Knowledge Database)__   
+> Title: 4th Job of a Call Manager - Incoming & Outgoing Calls   
+> Symptom: Phone becomes busy when calling other branches  
+> Problem: No configurations for Incoming/Outgoing Calls  
+> Solution:
+
+
+<br>
+
 ~~~
 !@CUCM
 conf t
@@ -1353,6 +2252,14 @@ conf t
 
 <br>
 
+> __FAQ (Knowledge Database)__   
+> Title: 5th Job of a Call Manager - IVRS   
+> Symptom: Not enough individuals responding to calls.    
+> Problem: Influx of incoming calls.  
+> Solution:  
+
+<br>
+
 ~~~
 !@CUCM
 config t
@@ -1431,13 +2338,13 @@ Review the jobs of a call manager:
 &nbsp;
 
 ### Requirements to make IP Phones Operational
-7. A____
-6. G71__  G72__
-5. R__
-4. TFTP:  SCCP:  SIP:
-3. IP Address
-2. MAC Address
-1. Power (PoE)
+1. &nbsp;
+2. &nbsp;
+3. &nbsp;
+4. &nbsp;
+5. &nbsp;
+6. &nbsp;
+7. &nbsp;
 
 <br>
 
@@ -1728,12 +2635,24 @@ copy run start
 
 [IEEE Ethernet Standards](https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html)
 
-  | Name            | Speed | IEEE  |
-  | ---             |  ---  |  ---  |
-  | Ethernet        |       |       |
-  | FastEthernet    |       |       |
-  | GigEthernet     |       |       |
-  | TenGigEthernet  |       |       |
+  | Name            | Speed    | IEEE      |
+  | ---             |  ---     | ---       |
+  | Ethernet        | 10 Mbps  |           |
+  | FastEthernet    | 100 Mbps |           |
+  | GigEthernet     | 1 Gbps   |           |
+  | TenGigEthernet  | 10 Gbps  |           |
+
+<br>
+
+  - RJ45 Jack
+  - SFP (Small Form-factor Pluggable)
+
+<br>
+
+  | Copper                                           | Single-mode fiber                    |
+  | ---                                              | ---                                  |
+  | Conductor, Bedding, Sheathing                    | Core, Cladding, Coating              |
+  | Affected by electrical and magnetic interference | Comprised of insulated glass strands |
 
 <br>
 <br>
@@ -1743,6 +2662,45 @@ copy run start
 
 ## 🔧 Configure EDGE
 ### 🏨 Establish connectivity to your enterprise.
+*How do you gain access to the internet?*
+
+&nbsp;
+---
+&nbsp;
+
+*What is the maximum distance of a UTP cable? 100m?*
+
+Network Scopes
+  - 🏠 LAN                  Local Area Network
+  - 🌎 WAN                  Wide Area Network
+
+<br>
+
+PLDT Home vs PLDT Enterprise
+  - 🌃 MAN                  Metropolitan Area Network
+                         PLDT Enterprise Metro Ethernet
+
+<br>
+
+Transport technologies
+  - Leased Line
+  - SDWAN
+  - MPLS VPLS            (Pseudowire, L3 & L2)
+  - VPN                  (EVPN)
+
+<br>
+
+*Why PLDT?*
+  __Submarine Cable Map__
+
+*Why NOT PLDT?*
+  - Cabling
+  - [Service Reliability](https://www.pldthome.com/termsandconditions)
+
+&nbsp;
+---
+&nbsp;
+
 *How to know if you are connected to PLDT? __SCN - `show cdp neighbor`__*
 
 ~~~
@@ -1755,6 +2713,14 @@ show cdp neighbor
 
 ---
 &nbsp;
+
+> __FAQ (Knowledge Database)__   
+> Title: Bootstrap Configurations for EDGE   
+> Symptom: Newly Procured  
+> Problem: No Configurations  
+> Solution:
+
+<br>
 
 ~~~
 !@EDGE
@@ -1792,6 +2758,24 @@ conf t
 
 ---
 &nbsp;
+
+> __FAQ (Knowledge Database)__   
+> Title: Jobs of an EDGE Router   
+> Symptom: Newly Procured  
+> Problem: No Configurations  
+> Solution:
+
+~~~
+Jobs of an EDGE Router:
+1. Static Routing 
+2. Default Routing 
+3. EIGRP Routing 
+4. OSPF Routing 
+5. BGP Routing 
+~~~
+
+<br>
+<br>
 
 ### ⚙️ Configure routing protocols
 ~~~
@@ -1945,7 +2929,7 @@ ping 10.#$34T#.#$34T#.1            EDGE
 <br>
 
 ## 🧱 Setup a Firewall (CSR1000v)
-
+   
 <br>
 
 __Ordinary Firewall vs NGFW__
@@ -1991,9 +2975,3 @@ conf t
  end
 wr
 ~~~
-
-<br>
-<br>
-
-### Wireless Deployment
-
