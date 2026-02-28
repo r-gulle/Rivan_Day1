@@ -1363,13 +1363,13 @@ import netmiko
 from netmiko import ConnectHandler
 
 def get_devices():
-    prompt = input('Which Monitors to be configured? [ex. 11 12 21]: ')
+    prompt = input('Which Monitors to be configured? [ex. 11 12 ]: ')
     active_pc = prompt.split()
     
     return active_pc
 
 def get_configs(user_m, add_dn=''):
-    list_of_pcs = ['11','12','21','22','31','32','41','42','51','52','61','62','71','72','81','82','91','92']
+    list_of_pcs = ['11','12','','22','31','32','41','42','51','52','61','62','71','72','81','82','91','92']
     configs = [
         'telephony-service',
         f'ip source-address 10.{user_m}.100.8 port 2000',
