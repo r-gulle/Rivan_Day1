@@ -1,0 +1,26 @@
+{
+    "monitor_number": "#$34T#",
+    
+    "device_config": {
+        "hostname": "CoreBaba-#$34T#",
+        "address": {
+            "vlan_70": {
+                "ipv4": "10.#$34T#.70.4",
+                "desc": "BLUETEAM"
+            },
+            "vlan_700":{
+                "ipv4": "10.21.200.4",
+                "desc": "devops"
+            },
+            "vlan_71": {
+                "ipv4": "10.#$34T#.71.4",
+                "desc": "REDTEAM"
+            },
+            "vlan_72": {
+                "ipv4": "10.#$34T#.72.4",
+                "desc": "AUDIT"
+            }
+        },
+        "logging_console": false
+    }
+}
